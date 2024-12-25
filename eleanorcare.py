@@ -6,6 +6,8 @@ import time
 
 def locate_by_id_demo():
 # Initialize the Chrome driver
+
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 # Step 1: Navigate to the homepage
