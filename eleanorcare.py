@@ -487,7 +487,21 @@ def locate_by_id_demo():
     time.sleep(5)
     print("clicked on download duplicate button")
 
+#GPT search button
+    driver.find_element(By.XPATH,"//button[normalize-space()='GPTSearch']").click()
+    time.sleep(5)
+    print("clicked on gpt search")
 
+    driver.find_element(By.XPATH,"//body/div[@id='headlessui-portal-root']/div/div/div[@id='headlessui-dialog-:rs:']"
+                                 "/div[@class='fixed inset-0 overflow-y-auto']/div[@class='flex min-h-full items-center "
+                                 "justify-center px-4 py-8']/div[@id='headlessui-dialog-panel-:rt:']/div[@class='p-5']"
+                                 "/form/div[1]").click()
+    time.sleep(5)
+    print("clicked on the gpt search what we need to search based on the content")
+
+    driver.find_element(By.XPATH,"//button[normalize-space()='Search']").click() # click on search once you clicked on the content
+    time.sleep(5)
+    print("clicked on search button")
 
 # Close the browser
 time.sleep(5)
