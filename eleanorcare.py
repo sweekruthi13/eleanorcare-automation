@@ -169,6 +169,34 @@ def locate_by_id_demo():
     print("clicked on all donations")
     time.sleep(10)
 
+# Action section in donation page for "history button"
+    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click() #click on history
+                                                                                                # button to check the changes
+    time.sleep(10)
+    print("clicked on history button to check the history ")
+
+# Edit button
+    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
+    time.sleep(10)
+    print("clicked on edit button")
+
+#cancel button
+    driver.find_element(By.XPATH,"//button[normalize-space()='Cancel']").click()#click on cancel button'
+    time.sleep(5)
+    print("clicked on cancel button")
+
+# Edit button if they want to edit again
+    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
+    time.sleep(10)
+    print("clicked on edit button")
+
+# click on update button
+    driver.find_element(By.XPATH,"//button[normalize-space()='Update']").click() #clicked on update button
+    time.sleep(10)
+    print("clicked on update button")
+
+
+
 
 # #online payment
 #     driver.find_element(By.XPATH, "//button[normalize-space()='Add Donation']").click()
@@ -196,7 +224,7 @@ def locate_by_id_demo():
 #     time.sleep(2)
 #     print("clicked on cheque")
 #
-# # step 13: Go back to online and enter the details
+# #Go back to online and enter the details
 #     driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r9:']").click()
 #     time.sleep(2)
 #     print("clicked on online")
@@ -228,10 +256,10 @@ def locate_by_id_demo():
 #     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
 #     print("clicked on all donations")
 #     time.sleep(10)
+#
 
 
-
-# step 14: click on calendar drop down to select date
+#  click on calendar drop down to select date
     driver.find_element(By.XPATH,"//button[@class='relative group block bg-primary p-1 rounded']//*[name()='svg']").click() #click on calender drop down
     time.sleep(10)
     print("clicked on calendar drop down")
@@ -502,6 +530,9 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Search']").click() # click on search once you clicked on the content
     time.sleep(5)
     print("clicked on search button")
+
+
+
 
 # Close the browser
 time.sleep(5)
