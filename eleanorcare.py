@@ -7,63 +7,113 @@ import time
 def locate_by_id_demo():
 # Initialize the Chrome driver
 
-
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-# Step 1: Navigate to the homepage
+#Navigate to the homepage
     driver.get("https://www.eleanorcare.ai/")
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
     time.sleep(3)
 
-# Step 2: Click on the Login page
+#click on the home button
+    driver.find_element(By.XPATH,"//div[normalize-space()='Home']").click() # click on home button
+    time.sleep(5)
+    print("clicked on the home button")
+
+#click on the features button in features click on several options to navigate to particular session
+    driver.find_element(By.XPATH,"//a[@class='menu-link']//div[contains(text(),'Features')]").click()
+                                                #clicked on features
+    time.sleep(5)
+    print("clicked on features")
+
+    driver.find_element(By.XPATH,"//body/div[@id='wrapper']/header[@id='header']/div[@id='header-wrap']/div[@class='container']"
+                                 "/div[@class='header-row']/nav[@class='primary-menu with-arrows primary-menu-init']/ul[@class='menu-container']"
+                                 "/li[@class='menu-item mega-menu sub-menu menu-item-hover']/div[@class='mega-menu-content"
+                                 " mega-menu-style-2 px-0']/div[@class='container']/div[@class='row']/a[1]/div[1]").click()
+                                    #navigate to particular session called features
+    time.sleep(10)
+    print("clicked on features donation management")
+
+    driver.find_element(By.XPATH,"//a[@class='menu-link']//div[contains(text(),'Features')]").click()
+                                                #clicked on features
+    time.sleep(5)
+    print("clicked on features")
+
+#click on the contact button
+    driver.find_element(By.XPATH,"//div[normalize-space()='Contact']").click()
+    time.sleep(10)
+    print("click on the contact button")
+
+#Home page to ask for the demo
+    driver.find_element(By.XPATH,"//div[normalize-space()='Home']").click()
+    time.sleep(5)
+    print("click on home page to click on as for demo")
+
+    driver.find_element(By.XPATH,"//input[@id='contactform-name']").send_keys("Testing")
+    time.sleep(5)
+    print("entered name for demo session")
+
+    driver.find_element(By.XPATH,"//input[@id='contactform-email']").send_keys("testing@gmail.com")
+    time.sleep(5)
+    print("entered email for the demo session")
+
+    driver.find_element(By.XPATH,"//input[@id='contactform-phone']").send_keys("1234561232")
+    time.sleep(5)
+    print("entered phone number")
+
+#click on the Ask for the demo
+    driver.find_element(By.XPATH,"//button[@id='demo-button']").click()
+    time.sleep(10)
+    print("clicked on i want a demo")
+
+#Click on the Login page
     driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
     time.sleep(3)
 
-# Step 3: Enter email
+#Enter email
     driver.find_element(By.ID, "email").send_keys("maintesting@gmail.com")
     time.sleep(3)
 
-# Step 4: Enter password
+#Enter password
     driver.find_element(By.ID, "password").send_keys("main@123")
     time.sleep(3)
 
-# Step 5: Show password (optional)
+#Show password (optional)
     driver.find_element(By.XPATH, "//input[@type='checkbox']").click()
     time.sleep(3)
 
-# Step 6: Click the Sign-In button
+#Click the Sign-In button
     driver.find_element(By.XPATH, "//button[normalize-space()='SIGN IN']").click()
     print("Clicked on the Sign In button successfully")
     time.sleep(3)
 
-# Step 4: Enter OTP
+#Enter OTP
 
     driver.find_element(By.CSS_SELECTOR, 'input[type="text"]').send_keys()
     print("entered otp")
-    time.sleep(10)
+    time.sleep(10) 
 
-# Step 8: click on check
+#click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
     time.sleep(2)
 
-# Step 9: Click on the dashboard button ( we need to copy real xpath and paste not index xpath)
+#Click on the dashboard button ( we need to copy real xpath and paste not index xpath)
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Dashboard']").click()
     print("clicked on dashboard")
     time.sleep(3)
 
-#Step 10: Click on donation button
+#Click on donation button
     driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
     print("Clicked on donation button")
     time.sleep(3)
 
-#step 11 : click on the Alldonations
+#click on the Alldonations
     driver.find_element(By.XPATH,"//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
     time.sleep(3)
 
-#step 12 : click on Add donation to add details for cash payment
+#click on Add donation to add details for cash payment
     driver.find_element(By.XPATH,"//button[normalize-space()='Add Donation']").click()
     driver.find_element(By.ID, "firstName").send_keys("Test")
     time.sleep(2)
@@ -89,7 +139,7 @@ def locate_by_id_demo():
     time.sleep(2)
     print("clicked on cheque")
 
-#step 13: Go back to cash and enter the details
+#Go back to cash and enter the details
     driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
     time.sleep(2)
     print("clicked on cash")
@@ -272,7 +322,7 @@ def locate_by_id_demo():
     print("unselect on cheque button")
 
 
-# step 15: Sub organization drop down button for sorting date and check with cash,online,cheque,confirmed and unconfirmed
+#Sub organization drop down button for sorting date and check with cash,online,cheque,confirmed and unconfirmed
     driver.find_element(By.XPATH,"//div[@class='text-sm__input-container css-19bb58m']").click() #click on the suborg dropdown
     time.sleep(10)
     print("clicked on the sub organization drop down")
@@ -346,7 +396,7 @@ def locate_by_id_demo():
     time.sleep(10)
     print("clicked on the sub organization drop down")
 
-#step 16 : upload file button
+#upload file button
     driver.find_element(By.XPATH,"//button[normalize-space()='Upload file']").click() #click on upload file button
     time.sleep(5)
     print("click on the file upload button")
