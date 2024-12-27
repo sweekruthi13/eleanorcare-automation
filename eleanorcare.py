@@ -169,33 +169,32 @@ def locate_by_id_demo():
     print("clicked on all donations")
     time.sleep(10)
 
-# Action section in donation page for "history button"
-    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click() #click on history
-                                                                                                # button to check the changes
-    time.sleep(10)
-    print("clicked on history button to check the history ")
-
-# Edit button
-    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
-    time.sleep(10)
-    print("clicked on edit button")
-
-#cancel button
-    driver.find_element(By.XPATH,"//button[normalize-space()='Cancel']").click()#click on cancel button'
-    time.sleep(5)
-    print("clicked on cancel button")
-
-# Edit button if they want to edit again
-    driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
-    time.sleep(10)
-    print("clicked on edit button")
-
-# click on update button
-    driver.find_element(By.XPATH,"//button[normalize-space()='Update']").click() #clicked on update button
-    time.sleep(10)
-    print("clicked on update button")
-
-
+# # Action section in donation page for "history button"
+#     driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click() #click on history
+#                                                                                                 # button to check the changes
+#     time.sleep(10)
+#     print("clicked on history button to check the history ")
+#
+# # Edit button
+#     driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
+#     time.sleep(10)
+#     print("clicked on edit button")
+#
+# #cancel button
+#     driver.find_element(By.XPATH,"//button[normalize-space()='Cancel']").click()#click on cancel button'
+#     time.sleep(5)
+#     print("clicked on cancel button")
+#
+# # Edit button if they want to edit again
+#     driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
+#     time.sleep(10)
+#     print("clicked on edit button")
+#
+# # click on update button
+#     driver.find_element(By.XPATH,"//button[normalize-space()='Update']").click() #clicked on update button
+#     time.sleep(10)
+#     print("clicked on update button")
+#
 
 
 # #online payment
@@ -531,6 +530,15 @@ def locate_by_id_demo():
     time.sleep(5)
     print("clicked on search button")
 
+#Task button
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Tasks']").click() #click on the task button
+    time.sleep(5)
+    print("clicked on task button")
+
+#Add a new task
+    driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
+    time.sleep(10)
+    print("clicked on add new task button")
 
 
 
