@@ -519,26 +519,51 @@ def locate_by_id_demo():
     time.sleep(5)
     print("clicked on gpt search")
 
-    driver.find_element(By.XPATH,"//body/div[@id='headlessui-portal-root']/div/div/div[@id='headlessui-dialog-:rs:']"
-                                 "/div[@class='fixed inset-0 overflow-y-auto']/div[@class='flex min-h-full items-center "
-                                 "justify-center px-4 py-8']/div[@id='headlessui-dialog-panel-:rt:']/div[@class='p-5']"
-                                 "/form/div[1]").click()
-    time.sleep(5)
-    print("clicked on the gpt search what we need to search based on the content")
-
     driver.find_element(By.XPATH,"//button[normalize-space()='Search']").click() # click on search once you clicked on the content
     time.sleep(5)
     print("clicked on search button")
 
-#Task button
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Tasks']").click() #click on the task button
-    time.sleep(5)
-    print("clicked on task button")
 
-#Add a new task
-    driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
-    time.sleep(10)
-    print("clicked on add new task button")
+
+#Task button
+    # driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Tasks']").click() #click on the task button
+    # time.sleep(5)
+    # print("clicked on task button")
+    # driver.find_element(By.XPATH,"//a[@class='active']").click()#click on task dropdown
+    # time.sleep(5)
+    # print("click on task drop down button")
+
+# #Task drop down
+#     driver.find_element(By.XPATH,"//a[normalize-space()='Tasks']").click()#click on the task drop down
+#     time.sleep(5)
+#     print("clicked on task dropdown")
+#
+# #Add a new task
+#     driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
+#     time.sleep(10)
+#     print("clicked on add new task button")
+#
+# #Add task page enter details
+#     driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
+#     time.sleep(3)
+#     print("Enter task title")
+#     driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click() #enter the Assignees
+#     time.sleep(10)
+#     print("Click on Assignees")
+#     driver.find_element(By.XPATH,"//select[@id='priority']").click() #select the priority
+#     time.sleep(3)
+#     print("click on priority")
+#     driver.find_element(By.XPATH, "//div[@class='ql-editor ql-blank']").send_keys("Complete the task which have "
+#                                                                                  "been assigned to you") #enter the description
+#     time.sleep(3)
+#     print("Entered the description")
+#     driver.find_element(By.XPATH,"//button[@class='btn btn-primary ltr:ml-4 rtl:mr-4']").click()#click on add button
+#     time.sleep(3)
+#     print("Click on add button")
+
+   
+
+
 
 
 
