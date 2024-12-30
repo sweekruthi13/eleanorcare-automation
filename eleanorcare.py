@@ -579,7 +579,32 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r10:']").click()#clicked on the enter text
     time.sleep(10)
     print("clicked on the campaign enter the text manually")
+    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
+                                 "ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']").click()
+                                    #click on x mark
+    time.sleep(5)
+    print("click on the x mark")
 
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click() #click on edit option for heading
+                                                                                                                #in the campaign page
+    time.sleep(5)
+    print("clicked on the campaign edit button for the header")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r11:']").click()#click on AI generated text
+    time.sleep(10)
+    print("clicked on the AI generated text")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click to generate AI content
+    time.sleep(10)
+    print("click to generate AI content")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Use this text']").click()#click on use this text
+    time.sleep(10)
+    print("click on the Use this text")
+    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
+                                 "ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']").click()
+                                    #click on x mark
+
+
+    time.sleep(5)
+    print("click on the x mark")
 
 
 
