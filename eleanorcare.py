@@ -562,6 +562,23 @@ def locate_by_id_demo():
 #     print("Click on add button")
 
    
+#campaigns button
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Campaigns']").click() #click on the campaign
+    time.sleep(3)
+    print("clicked on the campaigns button")
+    driver.find_element(By.XPATH,"//a[normalize-space()='All Campaigns']").click() #click on the all campaign
+    time.sleep(5)
+    print("clicked on the all campaign")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add Campaign']").click() #click on add campaign
+    time.sleep(5)
+    print("clicked on the add campaign")
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click() #click on edit option for heading
+                                                                                                                #in the campaign page
+    time.sleep(5)
+    print("clicked on the campaign edit button for the header")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r10:']").click()#clicked on the enter text
+    time.sleep(10)
+    print("clicked on the campaign enter the text manually")
 
 
 
