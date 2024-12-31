@@ -562,49 +562,69 @@ def locate_by_id_demo():
 #     print("Click on add button")
 
    
-#campaigns button
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Campaigns']").click() #click on the campaign
-    time.sleep(3)
-    print("clicked on the campaigns button")
-    driver.find_element(By.XPATH,"//a[normalize-space()='All Campaigns']").click() #click on the all campaign
+#campaigns button header
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Campaigns']").click()#click on campaign
     time.sleep(5)
-    print("clicked on the all campaign")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add Campaign']").click() #click on add campaign
+    print("Clicked on campaign")
+    driver.find_element(By.XPATH,"//a[normalize-space()='All Campaigns']").click()#click on all campaign
     time.sleep(5)
-    print("clicked on the add campaign")
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click() #click on edit option for heading
-                                                                                                                #in the campaign page
+    print("clicked on all campaign")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add Campaign']").click()#click on add campaign
     time.sleep(5)
-    print("clicked on the campaign edit button for the header")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r10:']").click()#clicked on the enter text
+    print("clicked on add campaign")
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click()#clicked on edit button for header
     time.sleep(10)
-    print("clicked on the campaign enter the text manually")
-    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
-                                 "ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']").click()
-                                    #click on x mark
+    print("clicked on edit button for the header")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:rg:']").click()#clicked on enter text
+    time.sleep(10)
+    print("entered the text manuvally")
+    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 ltr:right-4 rtl:left-4 "
+                                 "dark:hover:text-gray-600']//*[name()='svg']//*[name()='path' and contains(@d,'M512 0C229')]")
+                                #clicked on x to close the text content
     time.sleep(5)
-    print("click on the x mark")
+    print("clicked on x button")
 
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click() #click on edit option for heading
-                                                                                                                #in the campaign page
-    time.sleep(5)
-    print("clicked on the campaign edit button for the header")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r11:']").click()#click on AI generated text
+#To generate AI content for header section
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click()#click on edit button for header
     time.sleep(10)
-    print("clicked on the AI generated text")
+    print("click on edit button for the header")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r14:']").click()#click on the generate text for AI
+    time.sleep(10)
+    print("clicked on generate text for the AI")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click on "click to generate AI content
+    time.sleep(10)
+    print("click to generate AI content")
+    driver.find_element(By.XPATH,"//button[normalize-space()='Use this text']").click()#click on use this text button
+    time.sleep(10)
+    print("click on use this text")
+
+#campaign 2nd edit button for content which is below header
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[2]//*[name()='svg']").click()#click on content edit button
+    time.sleep(5)
+    print("click on content edit button")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1f:']").click()#click on enter text for the content
+    time.sleep(10)
+    print("entered the content")
+    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 ltr:right-4 "
+                                 "rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']//*[name()='path' and "
+                                 "contains(@d,'M512 0C229')]")#click on x button
+    time.sleep(10)
+    print("click on x button")
+    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[2]//*[name()='svg']").click()#click on edit button for
+                                                                    #content to add AI content
+    time.sleep(10)
+    print("click on the edit button to enter the AI content")
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1m:']").click()#click on generate text
+    time.sleep(10)
+    print("click on the AI text to add the AI content")
     driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click to generate AI content
     time.sleep(10)
     print("click to generate AI content")
     driver.find_element(By.XPATH,"//button[normalize-space()='Use this text']").click()#click on use this text
     time.sleep(10)
-    print("click on the Use this text")
-    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
-                                 "ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']").click()
-                                    #click on x mark
+    print("click on use this text")
 
 
-    time.sleep(5)
-    print("click on the x mark")
 
 
 
