@@ -578,11 +578,10 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:rg:']").click()#clicked on enter text
     time.sleep(10)
     print("entered the text manuvally")
-    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 ltr:right-4 rtl:left-4 "
-                                 "dark:hover:text-gray-600']//*[name()='svg']//*[name()='path' and contains(@d,'M512 0C229')]")
-                                #clicked on x to close the text content
-    time.sleep(5)
-    print("clicked on x button")
+    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800"
+                                 " ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']") #click on x button
+    time.sleep(10)
+    print("Click on the x button")
 
 #To generate AI content for header section
     driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click()#click on edit button for header
@@ -614,7 +613,7 @@ def locate_by_id_demo():
                                                                     #content to add AI content
     time.sleep(10)
     print("click on the edit button to enter the AI content")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1m:']").click()#click on generate text
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1m:']").click()#click on generate AI text content
     time.sleep(10)
     print("click on the AI text to add the AI content")
     driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click to generate AI content
