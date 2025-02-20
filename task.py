@@ -43,33 +43,33 @@ def locate_by_id_demo():
 
 
 
-# #Task drop down
-#     driver.find_element(By.XPATH,"//a[normalize-space()='Tasks']").click()#click on the task drop down
-#     time.sleep(5)
-#     print("clicked on task dropdown")
-#
-# #Add a new task
-#     driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
-#     time.sleep(10)
-#     print("clicked on add new task button")
-#
-# #Add task page enter details
-#     driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
-#     time.sleep(3)
-#     print("Enter task title")
-#     driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click() #enter the Assignees
-#     time.sleep(10)
-#     print("Click on Assignees")
-#     driver.find_element(By.XPATH,"//select[@id='priority']").click() #select the priority
-#     time.sleep(3)
-#     print("click on priority")
-#     driver.find_element(By.XPATH, "//div[@class='ql-editor ql-blank']").send_keys("Complete the task which have "
-#                                                                                  "been assigned to you") #enter the description
-#     time.sleep(3)
-#     print("Entered the description")
-#     driver.find_element(By.XPATH,"//button[@class='btn btn-primary ltr:ml-4 rtl:mr-4']").click()#click on add button
-#     time.sleep(3)
-#     print("Click on add button")
+#Task drop down
+    driver.find_element(By.XPATH,"//a[normalize-space()='Tasks']").click()#click on the task drop down
+    time.sleep(5)
+    print("clicked on task dropdown")
+
+#Add a new task
+    driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
+    time.sleep(10)
+    print("clicked on add new task button")
+
+#Add task page enter details
+    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
+    time.sleep(3)
+    print("Enter task title")
+    driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click() #enter the Assignees
+    time.sleep(10)
+    print("Click on Assignees")
+    driver.find_element(By.XPATH,"//select[@id='priority']").click() #select the priority
+    time.sleep(3)
+    print("click on priority")
+    driver.find_element(By.XPATH, "//div[@class='ql-editor ql-blank']").send_keys("Complete the task which have "
+                                                                                 "been assigned to you") #enter the description
+    time.sleep(3)
+    print("Entered the description")
+    driver.find_element(By.XPATH,"//button[@class='btn btn-primary ltr:ml-4 rtl:mr-4']").click()#click on add button
+    time.sleep(3)
+    print("Click on add button")
 
 # Close the browser
 time.sleep(5)

@@ -99,7 +99,7 @@ def locate_by_id_demo():
     time.sleep(2)
 
 #Click on the dashboard button ( we need to copy real xpath and paste not index xpath)
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Dashboard']").click()
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Dashboard']").click() 
     print("clicked on dashboard")
     time.sleep(3)
 
@@ -423,8 +423,12 @@ def locate_by_id_demo():
     time.sleep(10)
     print("clicked on the sub organization drop down")
 
+#more action
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
+    time.sleep(4)
+    print("clicked on the more action")
 #upload file button
-    driver.find_element(By.XPATH,"//button[normalize-space()='Upload file']").click() #click on upload file button
+    driver.find_element(By.XPATH,"//li[normalize-space()='Upload from file']").click() #click on upload file button
     time.sleep(5)
     print("click on the file upload button")
 
