@@ -67,20 +67,20 @@ def locate_by_id_demo():
     time.sleep(2)
     driver.find_element(By.XPATH,"//textarea[@id='address']").send_keys("Banglore")
     time.sleep(2)
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
-    time.sleep(2)
-    print("clicked on cash")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r9:']").click()
-    time.sleep(2)
-    print("clicked on online")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
-    time.sleep(2)
-    print("clicked on cheque")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
+    #time.sleep(2)
+    #print("clicked on cash")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r9:']").click()
+    #time.sleep(2)
+    #print("clicked on online")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
+    #time.sleep(2)
+    #print("clicked on cheque")
 
 #Go back to cash and enter the details
-    driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
-    time.sleep(2)
-    print("clicked on cash")
+    #driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
+    #time.sleep(2)
+    #print("clicked on cash")
     driver.find_element(By.XPATH,"//input[@id='cashAmount']").send_keys("2000")
     time.sleep(2)
     print("entered amount")
@@ -272,6 +272,11 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//div[@class='text-sm__input-container css-19bb58m']").click() #click on the suborg dropdown
     time.sleep(10)
     print("clicked on the sub organization drop down")
+
+#more action
+    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
+    time.sleep(4)
+    print("clicked on the more action")
 
 #upload file button
     driver.find_element(By.XPATH,"//button[normalize-space()='Upload file']").click() #click on upload file button

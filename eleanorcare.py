@@ -142,21 +142,21 @@ def locate_by_id_demo():
     #driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click()
     #time.sleep(2)
     #print("clicked on target account")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
-    time.sleep(2)
-    print("clicked on cash")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r9:']").click()
-    time.sleep(2)
-    print("clicked on online")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
-    time.sleep(2)
-    print("clicked on cheque")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
+    #time.sleep(2)
+    #print("clicked on cash")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r9:']").click()
+    #time.sleep(2)
+    #print("clicked on online")
+    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
+    #time.sleep(2)
+    #print("clicked on cheque")
 
 
 #Go back to cash and enter the details
-    driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
-    time.sleep(2)
-    print("clicked on cash")
+    #driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
+    #time.sleep(2)
+    #print("clicked on cash")
     driver.find_element(By.XPATH,"//input[@id='cashAmount']").send_keys("2000")
     time.sleep(2)
     print("Entered the amount")
@@ -444,8 +444,6 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//li[normalize-space()='Upload from file']").click() #click on upload file button
     time.sleep(5)
     print("click on the file upload button")
-
-
     driver.find_element(By.XPATH,"//button[contains(@class,'-mb-[1px] block border border-transparent p-3.5 py-2 hover:text-primary "
                                  "dark:hover:border-b-black')][normalize-space()='Cash']").click() #click on cash
     time.sleep(5)
