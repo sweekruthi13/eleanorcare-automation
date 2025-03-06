@@ -88,7 +88,6 @@ def locate_by_id_demo():
     time.sleep(3)
 
 #Enter OTP
-
     driver.find_element(By.CSS_SELECTOR, 'input[type="text"]').send_keys()
     print("entered otp")
     time.sleep(10) 
@@ -135,8 +134,14 @@ def locate_by_id_demo():
     time.sleep(2)
     print("Entered agent name")
     driver.find_element(By.XPATH,"//textarea[@id='address']").send_keys("Banglore")
-    time.sleep(2)
+    time.sleep(5)
     print("Entered address")
+    #driver.find_element(By.XPATH,"//div[@id='react-select-11-placeholder']").click()
+    #time.sleep(2)
+    #print("clicked on campaign drop down")
+    #driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click()
+    #time.sleep(2)
+    #print("clicked on target account")
     driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
     time.sleep(2)
     print("clicked on cash")
@@ -147,27 +152,27 @@ def locate_by_id_demo():
     time.sleep(2)
     print("clicked on cheque")
 
+
 #Go back to cash and enter the details
     driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
     time.sleep(2)
     print("clicked on cash")
     driver.find_element(By.XPATH,"//input[@id='cashAmount']").send_keys("2000")
     time.sleep(2)
-    print("entered amount")
-
+    print("Entered the amount")
     driver.find_element(By.XPATH,"//input[@id='cashPaymentDate']").click()
     time.sleep(5)
     print("selected payment date")
-
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()
     time.sleep(5)
-    print("click on add button")
+    print("Click on add button")
 
 # after donor details is entered and click on add we go to all donations and add donations
 # to check weather the donation has added or not
     driver.back()
     print("Navigated back to Google")
     time.sleep(2)
+    print("clicked on google")
 
     driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
     print("Clicked on donation button")
@@ -178,7 +183,7 @@ def locate_by_id_demo():
     time.sleep(10)
 
 # # Action section in donation page for "history button"
-#     driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click() #click on history
+#     driver.find_element(By.XPATH,"//body/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click() #click on history
 #                                                                                                 # button to check the changes
 #     time.sleep(10)
 #     print("clicked on history button to check the history ")
@@ -196,7 +201,7 @@ def locate_by_id_demo():
 # # Edit button if they want to edit again
 #     driver.find_element(By.XPATH,"//tbody/tr[1]/td[8]/div[1]/ul[1]/li[1]/button[1]//*[name()='svg']").click()#clicked on edit button
 #     time.sleep(10)
-#     print("clicked on edit button")
+#     print("clicked on edit button")`
 #
 # # click on update button
 #     driver.find_element(By.XPATH,"//button[normalize-space()='Update']").click() #clicked on update button

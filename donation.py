@@ -103,6 +103,7 @@ def locate_by_id_demo():
     print("Clicked on donation button")
     time.sleep(3)
 
+
     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
     time.sleep(10)
