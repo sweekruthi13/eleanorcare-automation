@@ -39,7 +39,32 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(7)
+    time.sleep(2)
+
+#click on expense
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Expenses']").click()
+    print("clicked on expense button")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//a[normalize-space()='Expenses']").click() #click on drop down for expense
+    print("clicked on expense drop down")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add expense']").click() #clicked on add expense button
+    print("clicked on add expense button")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("test") #entered name
+    print("Entered name")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//textarea[@id='description']").send_keys("spent expense")#enter description
+    print("Entered desciption")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='paymentDate']").click()#clicked on date
+    print("Clicked on payment date")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add Line Item']").click()#clicked on add line item
+    print("clicked on add line item")
+    time.sleep(5)
+
+
 
 
 
