@@ -439,7 +439,6 @@ def locate_by_id_demo():
 #more action
     driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
     time.sleep(4)
-
     print("clicked on the more action")
 #upload file button
     driver.find_element(By.XPATH,"//li[normalize-space()='Upload from file']").click() #click on upload file button
