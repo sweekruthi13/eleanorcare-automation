@@ -63,6 +63,16 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Add Line Item']").click()#clicked on add line item
     print("clicked on add line item")
     time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='lineItemName']").send_keys("Pencil")#entered item name
+    print("entered lineitemname")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//textarea[@id='lineItemDescription']").send_keys("purchased the pencil")#entered lineitem description
+    print("entered description")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
+    print("clicked on add button")
+    time.sleep(5)
+
 
 
 
