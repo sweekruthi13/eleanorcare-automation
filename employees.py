@@ -66,7 +66,15 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
     print("entered password")
     time.sleep(5)
-
+    #driver.find_element(By.XPATH,"").click()#clicked on select roles
+   #print("clicked on select roles")
+    #time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("1234569874")#entered phone number
+    print("entered phone number")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
+    print("clicked on add button")
+    time.sleep(5)
 
 
 
