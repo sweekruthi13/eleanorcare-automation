@@ -379,6 +379,7 @@ def locate_by_id_demo():
     time.sleep(5)
     print("clicked on search button")
 
+    #task
 #Task drop down
     driver.find_element(By.XPATH,"//a[normalize-space()='Tasks']").click()#click on the task drop down
     time.sleep(5)
@@ -407,6 +408,7 @@ def locate_by_id_demo():
     time.sleep(3)
     print("Click on add button")
 
+    #campaign
 
 #campaigns button header
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Campaigns']").click()#click on campaign
@@ -470,11 +472,43 @@ def locate_by_id_demo():
     time.sleep(10)
     print("click on use this text")
 
+    #employees
+# click on employees
+    driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Employees']").click()  # click on employees
+    print("clicked on employees")
+    time.sleep(5)
 
+    # click on employees drop down
+    driver.find_element(By.XPATH, "//a[normalize-space()='Employees']").click()  # clicked on drop down of employees
+    print("clicked on employees from the dop down")
+    time.sleep(5)
+    # click on add employees
+    driver.find_element(By.XPATH, "//button[normalize-space()='Add Employee']").click()  # clicked on add employees
+    print("clicked on add employees")
+    time.sleep(5)
+    driver.find_element(By.XPATH, "//input[@id='firstName']").send_keys("zibra")  # entered first name
+    print("entered first name")
+    time.sleep(3)
+    driver.find_element(By.XPATH, "//input[@id='lastName']").send_keys("black")  # entered last name
+    print("entered last name")
+    time.sleep(3)
+    driver.find_element(By.XPATH, "//input[@id='email']").send_keys("zibra@gmail.com")  # entered email
+    print("entered email")
+    time.sleep(3)
+    driver.find_element(By.XPATH, "//input[@id='password']").send_keys("1234")  # entered password
+    print("entered password")
+    time.sleep(3)
+    # driver.find_element(By.XPATH,"").click()#clicked on select roles
+    # print("clicked on select roles")
+    # time.sleep(5)
+    driver.find_element(By.XPATH, "//input[@id='phone']").send_keys("1234569874")  # entered phone number
+    print("entered phone number")
+    time.sleep(3)
+    driver.find_element(By.XPATH, "//button[normalize-space()='Add']").click()  # clicked on add button
+    print("clicked on add button")
+    time.sleep(3)
 
-
-
-
+    #volunteers
 
 # Close the browser
 time.sleep(5)
