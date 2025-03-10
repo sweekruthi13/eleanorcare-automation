@@ -72,6 +72,12 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
     print("clicked on add button")
     time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='fromDateFilter']").click()#clicked on date filter for from date
+    print("clicked on from date")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@id='toDateFilter']").click()#clicked on to date filter to date
+    print("clicked on to date")
+    time.sleep(5)
 
 
 
