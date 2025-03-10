@@ -278,10 +278,12 @@ def locate_by_id_demo():
     time.sleep(4)
     print("clicked on the more action")
 
+
+
 #upload file button
     driver.find_element(By.XPATH,"//button[normalize-space()='Upload file']").click() #click on upload file button
-    time.sleep(5)
-    print("click on the file upload button")
+    time.sleep(4)
+    print("click on file upload button")
 
 
     driver.find_element(By.XPATH,"//button[contains(@class,'-mb-[1px] block border border-transparent p-3.5 py-2 hover:text-primary "
