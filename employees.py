@@ -73,7 +73,7 @@ def locate_by_id_demo():
     print("entered phone number")
     time.sleep(5)
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
-    print("clicked on add button")
+    print("clicked on add button")#clicked
     time.sleep(5)
 
 
