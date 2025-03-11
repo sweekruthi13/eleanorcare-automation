@@ -39,7 +39,7 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(7)
+    time.sleep(5)
 
 #click on employees to select the volunteers drop down
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee
@@ -60,12 +60,16 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//input[@id='email']").send_keys("s@gmail.com")#entered email
     print("entered email")
     time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
+    print("entered password")
+    time.sleep(3)
     driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("2365897456")#entered phone number
     print("entered phone number")
     time.sleep(3)
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
     print("clicked on add button")
     time.sleep(3)
+
 
 
 # Close the browser
