@@ -69,7 +69,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
     print("clicked on add button")
     time.sleep(3)
-
+    
 
 
 # Close the browser
