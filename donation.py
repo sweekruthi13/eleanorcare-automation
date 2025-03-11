@@ -509,6 +509,35 @@ def locate_by_id_demo():
     time.sleep(3)
 
     #volunteers
+#click on employees to select the volunteers drop down
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee
+    print("clicked on employee to select volunteer")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//a[normalize-space()='Volunteers']").click()#clicked on volunteers
+    print("clicked on volunteer")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add Volunteer']").click()#click on add volunteers
+    print("clicked on add volunteer")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='firstName']").send_keys("shift")#entered first name
+    print("entered first name")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='lastName']").send_keys("S")#entered last name
+    print("entered last name")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='email']").send_keys("s@gmail.com")#entered email
+    print("entered email")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
+    print("entered password")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("2365897456")#entered phone number
+    print("entered phone number")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
+    print("clicked on add button")
+    time.sleep(3)
+
 
 # Close the browser
 time.sleep(5)
