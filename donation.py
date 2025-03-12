@@ -538,6 +538,29 @@ def locate_by_id_demo():
     print("clicked on add button")
     time.sleep(3)
 
+# click on employees to select and team from employee dropdown
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee button
+    print("clicked on employee button")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//a[normalize-space()='Teams']").click()#clicked on teams
+    print("clicked on team button")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add team']").click()#clicked on add team
+    print("clicked on add team button")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("team11")# entered name
+    print("Entered name")
+    time.sleep(3)
+    driver.find_element(By.XPATH,"//textarea[@id='description']").send_keys("complete the task")# entered description
+    print("entered description")
+    time.sleep(3)
+    #driver.find_element(By.XPATH,"")#click on manager drop down
+    #print("clicked on manager")
+    #time.sleep(3)
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add']")#clicked on add button
+    print("clicked on add button")
+    time.sleep(3) 
+
 
 # Close the browser
 time.sleep(5)
