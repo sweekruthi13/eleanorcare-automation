@@ -40,20 +40,18 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
     time.sleep(2)
-
-
-
 #Task drop down
-    driver.find_element(By.XPATH,"//a[normalize-space()='Tasks']").click()#click on the task drop down
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Tasks']").click()#click on the task drop down
     time.sleep(5)
     print("clicked on task dropdown")
+    driver.find_element(By.XPATH, "//a[normalize-space()='Tasks']").click()  # click on the task button
+    print("clicked on tasks")
+    time.sleep(3)
 
 #Add a new task
     driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
     time.sleep(10)
     print("clicked on add new task button")
-
-#Add task page enter details
     driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
     time.sleep(3)
     print("Enter task title")
