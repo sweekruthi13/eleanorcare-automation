@@ -61,7 +61,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//div[@class='ml-4 flex cursor-pointer flex-row !py-3 text-danger']").click()#clicked on logout
     print("clicked on logout button")
     time.sleep(3)
-
+    
 
 
 
