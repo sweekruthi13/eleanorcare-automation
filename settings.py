@@ -68,6 +68,8 @@ def locate_by_id_demo():
 
 
 
+
+
 # Close the browser
 time.sleep(5)
 
