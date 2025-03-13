@@ -1,3 +1,4 @@
+from multiprocessing.reduction import send_handle
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -30,6 +31,8 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH, "//button[normalize-space()='SIGN IN']").click()
     print("Clicked on the Sign In button successfully")
     time.sleep(3)
+    
+
 
 #Enter OTP
 
@@ -61,7 +64,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//div[@class='ml-4 flex cursor-pointer flex-row !py-3 text-danger']").click()#clicked on logout
     print("clicked on logout button")
     time.sleep(3)
-    
+
 
 
 
