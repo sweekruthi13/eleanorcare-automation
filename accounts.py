@@ -60,11 +60,13 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//input[@id='accType']").send_keys("savings")#entered acctype
     print("entered acc type")
     time.sleep(3)
+
                 #select tage once name or id is fixed then i will write script for drop down
 
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add
     print("click on add button")
     time.sleep(3)
+
 
 
 
