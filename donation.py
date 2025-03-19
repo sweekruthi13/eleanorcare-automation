@@ -10,13 +10,14 @@ def locate_by_id_demo():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 #Navigate to the homepage
-    driver.get("https://www.eleanorcare.ai/")
+    # driver.get("https://www.eleanorcare.ai/")
+    driver.get("http://localhost:3000/")
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
     time.sleep(3)
 
-    driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
-    time.sleep(3)
+    # driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
+    # time.sleep(3)
 
 #Enter email
     driver.find_element(By.ID, "email").send_keys("maintesting@gmail.com")
@@ -39,7 +40,7 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(2)
+    time.sleep(20)
 
 #Click on donation button
     driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
@@ -50,6 +51,8 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
     time.sleep(3)
+
+
 
 #click on Add donation to add details for cash payment
     driver.find_element(By.XPATH,"//button[normalize-space()='Add Donation']").click()
@@ -67,23 +70,29 @@ def locate_by_id_demo():
     time.sleep(2)
     driver.find_element(By.XPATH,"//textarea[@id='address']").send_keys("Banglore")
     time.sleep(2)
-    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r8:']").click()
-    #time.sleep(2)
-    #print("clicked on cash")
-    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r9:']").click()
-    #time.sleep(2)
-    #print("clicked on online")
-    #driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
-    #time.sleep(2)
-    #print("clicked on cheque")
+    driver.find_element(By.ID,"select-campaign-dropdown").click()
+    print("clicked on select campaign dropdown")
+    time.sleep(5)
+    driver.find_element(By.ID,"select-target-account").click()
+    print("clicked on target account")
+    time.sleep(5)
+    driver.find_element(By.ID,"cash-donation-button").click()
+    print("clicked on cash")
+    time.sleep(2)
+    driver.find_element(By.ID,"online-donation-button").click()
+    print("clicked on online")
+    time.sleep(2)
+    driver.find_element(By.ID,"cheque-donation-button").click()
+    print("clicked on cheque")
+    time.sleep(2)
 
 #Go back to cash and enter the details
-    #driver.find_element(By.XPATH, "//button[@id='headlessui-tabs-tab-:r8:']").click()
-    #time.sleep(2)
-    #print("clicked on cash")
-    driver.find_element(By.XPATH,"//input[@id='cashAmount']").send_keys("2000")
+    driver.find_element(By.ID,"cash-donation-button").click()
+    print("clicked on cash")
     time.sleep(2)
+    driver.find_element(By.XPATH,"//input[@id='cashAmount']").send_keys("2000")
     print("entered amount")
+    time.sleep(2)
 
     driver.find_element(By.XPATH,"//input[@id='cashPaymentDate']").click()
     time.sleep(5)
@@ -274,11 +283,9 @@ def locate_by_id_demo():
     print("clicked on the sub organization drop down")
 
 #more action
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ra:']").click()
+    driver.find_element(By.ID, "donations-more-action").click()
     time.sleep(4)
     print("clicked on the more action")
-
-
 
 #upload file button
     driver.find_element(By.XPATH,"//button[normalize-space()='Upload file']").click() #click on upload file button
@@ -365,7 +372,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//input[@id='fromDateFilter']").click() #click on from date
     time.sleep(5)
     print("clicked on from date")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Download Duplicates']").click() #download the duplicate file for
+    driver.find_element(By.ID,"download-duplicate-button").click() #download the duplicate file for
                                                                                                     # 2 months in the form of excel
     time.sleep(5)
     print("clicked on download duplicate button")
@@ -387,6 +394,14 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH, "//a[normalize-space()='Tasks']").click()  # click on the task button
     print("clicked on tasks")
     time.sleep(3)
+
+#Actions
+    driver.find_element(By.ID,"payment-verified").click()
+    print("clicked on verify payments")
+    time.sleep(10)
+    driver.find_element(By.ID,"payment-confirmed").click()
+    print("clicked on confirm payments")
+    time.sleep(10)
 
 #Add a new task
     driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
