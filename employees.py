@@ -10,13 +10,16 @@ def locate_by_id_demo():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 #Navigate to the homepage
-    driver.get("https://www.eleanorcare.ai/")
+   # driver.get("https://www.eleanorcare.ai/")
+
+
+    driver.get("http://localhost:3000/")
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
     time.sleep(3)
 
-    driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
-    time.sleep(3)
+    #driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
+    #time.sleep(3)
 
 #Enter email
     driver.find_element(By.ID, "email").send_keys("maintesting@gmail.com")
@@ -39,12 +42,12 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(5)
+    time.sleep(10)
 
 #click on employees
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#click on employees
     print("clicked on employees")
-    time.sleep(5)
+    time.sleep(10)
 
 #click on employees drop down
     driver.find_element(By.XPATH,"//a[normalize-space()='Employees']").click()#clicked on drop down of employees
@@ -66,15 +69,18 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
     print("entered password")
     time.sleep(3)
-    #driver.find_element(By.XPATH,"").click()#clicked on select roles
-    #print("clicked on select roles")
-    #time.sleep(5)
+    driver.find_element(By.ID,"select-employee roles").click()#clicked on select roles
+    print("clicked on select roles")
+    time.sleep(5)
     driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("1234569874")#entered phone number
     print("entered phone number")
     time.sleep(3)
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
     print("clicked on add button")
     time.sleep(3)
+    driver.find_element(By.ID,"edit-employee").click()
+    print("clicked on edit employee")
+    time.sleep(10)
 
 
 
