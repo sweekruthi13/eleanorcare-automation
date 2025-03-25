@@ -28,7 +28,7 @@ def locate_by_id_demo():
 #Click the Sign-In button
     driver.find_element(By.XPATH, "//button[normalize-space()='SIGN IN']").click()
     print("Clicked on the Sign In button successfully")
-    time.sleep(3)
+    time.sleep(10)
 
 #Enter OTP
 
@@ -39,7 +39,7 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(5)
+    time.sleep(10)
 
 #click on employees to select the volunteers drop down
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee
@@ -62,13 +62,20 @@ def locate_by_id_demo():
     time.sleep(3)
     driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
     print("entered password")
-    time.sleep(3)
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//input[@class='form-input flatpickr-input']").click()
+    print("clicked on account expiry date")
+    time.sleep(5)
+    driver.find_element(By.XPATH,"//div[@id='react-select-3-placeholder']").click()
+    print("clicked on roles")
+    time.sleep(5)
     driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("2365897456")#entered phone number
     print("entered phone number")
     time.sleep(3)
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
     print("clicked on add button")
     time.sleep(3)
+
     
 
 
