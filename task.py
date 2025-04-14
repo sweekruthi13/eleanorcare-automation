@@ -68,7 +68,7 @@ def locate_by_id_demo():
                                                                                  "been assigned to you") #enter the description
     print("Entered the description")
     time.sleep(3)
-    driver.find_element(By.XPATH,"//button[@class='btn btn-primary ltr:ml-4 rtl:mr-4']").click()#click on add button
+    driver.find_element(By.ID,"task-add").click()#click on add button
     print("Click on add button")
     time.sleep(3)
 

@@ -1,7 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 import time
 
 def locate_by_id_demo():
@@ -70,9 +75,15 @@ def locate_by_id_demo():
     time.sleep(2)
     driver.find_element(By.XPATH,"//textarea[@id='address']").send_keys("Banglore")
     time.sleep(2)
-    driver.find_element(By.ID,"select-campaign-dropdown").click()
-    print("clicked on select campaign dropdown")
-    time.sleep(5)
+
+
+#Click to open the dropdown
+    driver.find_element(By.ID, "select-campaign-dropdown").click()
+    print("Clicked on select campaign dropdown")
+    time.sleep(10)
+
+
+
     driver.find_element(By.ID,"select-target-account").click()
     print("clicked on target account")
     time.sleep(5)
@@ -106,11 +117,11 @@ def locate_by_id_demo():
 # to check weather the donation has added or not
     driver.back()
     print("Navigated back to Google")
-    time.sleep(2)
+    time.sleep(5)
 
     driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
     print("Clicked on donation button")
-    time.sleep(3)
+    time.sleep(5)
 
 
     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
@@ -209,7 +220,7 @@ def locate_by_id_demo():
 
 
 #Sub organization drop down button for sorting date and check with cash,online,cheque,confirmed and unconfirmed
-    driver.find_element(By.XPATH,"//div[@class='text-sm__input-container css-19bb58m']").click() #click on the suborg dropdown
+    driver.find_element(By.ID,"sub-org-dropdown").click() #click on the dropdown #click on the suborg dropdown
     time.sleep(10)
     print("clicked on the sub organization drop down")
     driver.find_element(By.XPATH,"//button[@class='relative group block bg-primary "
@@ -244,22 +255,26 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Online']").click() #click on online
     time.sleep(5)
     print("click on online")
+
     driver.find_element(By.XPATH,"//button[normalize-space()='Confirmed']").click() # select on confirm button
     time.sleep(5)
     print("click on confirmed for online")
+
     driver.find_element(By.XPATH,"//button[normalize-space()='Confirmed']").click()# un select on confirm button
     time.sleep(5)
     print("un select confirm payment for online")
+
     driver.find_element(By.XPATH,"//button[normalize-space()='Unconfirmed']").click() # click on unconfirmed button
     time.sleep(5)
     print("click on unconfirmed button for online")
+
     driver.find_element(By.XPATH,"//button[normalize-space()='Unconfirmed']").click() # un select unconfirmed button
     time.sleep(5)
     print("un select the unconfirmed button for online")
+
     driver.find_element(By.XPATH,"//button[normalize-space()='Online']").click() #unselect on online
     time.sleep(5)
     print("un select on online")
-
     driver.find_element(By.XPATH,"//button[normalize-space()='Cheques']").click() #click on cheque
     time.sleep(5)
     print("click on cheque button")
@@ -276,11 +291,12 @@ def locate_by_id_demo():
     time.sleep(5)
     print("un select the unconfirmed button for online")
     driver.find_element(By.XPATH, "//button[normalize-space()='Cheques']").click()  # un check on cheque
-    time.sleep(5)
+    time.sleep(20)
     print("unselect on cheque button")
-    driver.find_element(By.XPATH,"//div[@class='text-sm__input-container css-19bb58m']").click() #click on the suborg dropdown
-    time.sleep(10)
-    print("clicked on the sub organization drop down")
+
+    # driver.find_element(By.ID,"sub-org-dropdown").click() #click on the dropdown
+    # print("clicked on the sub organization drop down")
+    # time.sleep(10)
 
 #more action
     driver.find_element(By.ID, "donations-more-action").click()
@@ -386,14 +402,6 @@ def locate_by_id_demo():
     time.sleep(5)
     print("clicked on search button")
 
-    #task
-#Task drop down
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Tasks']").click()#click on the task drop down
-    time.sleep(5)
-    print("clicked on task dropdown")
-    driver.find_element(By.XPATH, "//a[normalize-space()='Tasks']").click()  # click on the task button
-    print("clicked on tasks")
-    time.sleep(3)
 
 #Actions
     driver.find_element(By.ID,"payment-verified").click()
@@ -403,201 +411,6 @@ def locate_by_id_demo():
     print("clicked on confirm payments")
     time.sleep(10)
 
-#Add a new task
-    driver.find_element(By.XPATH,"//button[@class='btn btn-primary w-full']").click() #click on the add new task button
-    time.sleep(10)
-    print("clicked on add new task button")
-    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
-    time.sleep(3)
-    print("Enter task title")
-    driver.find_element(By.XPATH,"//div[@id='react-select-14-placeholder']").click() #enter the Assignees
-    time.sleep(10)
-    print("Click on Assignees")
-    driver.find_element(By.XPATH,"//select[@id='priority']").click() #select the priority
-    time.sleep(3)
-    print("click on priority")
-    driver.find_element(By.XPATH, "//div[@class='ql-editor ql-blank']").send_keys("Complete the task which have "
-                                                                                 "been assigned to you") #enter the description
-    time.sleep(3)
-    print("Entered the description")
-    driver.find_element(By.XPATH,"//button[@class='btn btn-primary ltr:ml-4 rtl:mr-4']").click()#click on add button
-    time.sleep(3)
-    print("Click on add button")
-
-    #campaign
-
-#campaigns button header
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Campaigns']").click()#click on campaign
-    time.sleep(5)
-    print("Clicked on the campaign page")
-    driver.find_element(By.XPATH,"//a[normalize-space()='All Campaigns']").click()#click on all campaign
-    time.sleep(5)
-    print("clicked on all campaign")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add Campaign']").click()#click on add campaign
-    time.sleep(5)
-    print("clicked on add campaign")
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click()#clicked on edit button for header
-    time.sleep(10)
-    print("clicked on edit button for the header")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:rg:']").click()#clicked on enter text
-    time.sleep(10)
-    print("entered the text manuvally")
-    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
-                                 "ltr:right-4 rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']") #click on x button
-    time.sleep(10)
-    print("click on the x button")
-
-
-#To generate AI content for header section
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[1]//*[name()='svg']").click()#click on edit button for header
-    time.sleep(10)
-    print("click on edit button for the header")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:ru:']").click()#click on the generate text for AI
-    time.sleep(10)
-    print("clicked on generate text for the AI")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click on "click to generate AI content
-    time.sleep(10)
-    print("click to generate AI content")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Use this text']").click()#click on use this text button
-    time.sleep(10)
-    print("click on use this text")
-
-#campaign 2nd edit button for content which is below header
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[2]//*[name()='svg']").click()#click on content edit button
-    time.sleep(5)
-    print("click on content edit button")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1f:']").click()#click on enter text for the content
-    time.sleep(10)
-    print("entered the content")
-    driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 ltr:right-4 "
-                                 "rtl:left-4 dark:hover:text-gray-600']//*[name()='svg']//*[name()='path' and "
-                                 "contains(@d,'M512 0C229')]")#click on x button
-    time.sleep(10)
-    print("click on x button")
-    driver.find_element(By.XPATH,"//div[@class='panel mb-5 w-full']//button[2]//*[name()='svg']").click()#click on edit button for
-                                                                    #content to add AI content
-    time.sleep(10)
-    print("click on the edit button to enter the AI content")
-    driver.find_element(By.XPATH,"//button[@id='headlessui-tabs-tab-:r1m:']").click()#click on generate AI text content
-    time.sleep(10)
-    print("click on the AI text to add the AI content")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Click to generate AI content']").click()#click to generate AI content
-    time.sleep(10)
-    print("click to generate AI content")
-    driver.find_element(By.XPATH,"//button[normalize-space()='Use this text']").click()#click on use this text
-    time.sleep(10)
-    print("click on use this text")
-
-    #employees
-# click on employees
-    driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Employees']").click()  # click on employees
-    print("clicked on employees")
-    time.sleep(5)
-
-    # click on employees drop down
-    driver.find_element(By.XPATH, "//a[normalize-space()='Employees']").click()  # clicked on drop down of employees
-    print("clicked on employees from the dop down")
-    time.sleep(5)
-    # click on add employees
-    driver.find_element(By.XPATH, "//button[normalize-space()='Add Employee']").click()  # clicked on add employees
-    print("clicked on add employees")
-    time.sleep(5)
-    driver.find_element(By.XPATH, "//input[@id='firstName']").send_keys("zibra")  # entered first name
-    print("entered first name")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//input[@id='lastName']").send_keys("black")  # entered last name
-    print("entered last name")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//input[@id='email']").send_keys("zibra@gmail.com")  # entered email
-    print("entered email")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//input[@id='password']").send_keys("1234")  # entered password
-    print("entered password")
-    time.sleep(3)
-    # driver.find_element(By.XPATH,"").click()#clicked on select roles
-    # print("clicked on select roles")
-    # time.sleep(5)
-    driver.find_element(By.XPATH, "//input[@id='phone']").send_keys("1234569874")  # entered phone number
-    print("entered phone number")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//button[normalize-space()='Add']").click()  # clicked on add button
-    print("clicked on add button")
-    time.sleep(3)
-
-    #volunteers
-#click on employees to select the volunteers drop down
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee
-    print("clicked on employee to select volunteer")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//a[normalize-space()='Volunteers']").click()#clicked on volunteers
-    print("clicked on volunteer")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add Volunteer']").click()#click on add volunteers
-    print("clicked on add volunteer")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='firstName']").send_keys("shift")#entered first name
-    print("entered first name")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='lastName']").send_keys("S")#entered last name
-    print("entered last name")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='email']").send_keys("s@gmail.com")#entered email
-    print("entered email")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='password']").send_keys("1234")#entered password
-    print("entered password")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='phone']").send_keys("2365897456")#entered phone number
-    print("entered phone number")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add button
-    print("clicked on add button")
-    time.sleep(3)
-
-# click on employees to select and team from employee dropdown
-    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Employees']").click()#clicked on employee button
-    print("clicked on employee button")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//a[normalize-space()='Teams']").click()#clicked on teams
-    print("clicked on team button")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add team']").click()#clicked on add team
-    print("clicked on add team button")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("team11")# entered name
-    print("Entered name")
-    time.sleep(3)
-    driver.find_element(By.XPATH,"//textarea[@id='description']").send_keys("complete the task")# entered description
-    print("entered description")
-    time.sleep(3)
-    #driver.find_element(By.XPATH,"")#click on manager drop down
-    #print("clicked on manager")
-    #time.sleep(3)
-    driver.find_element(By.XPATH,"//button[normalize-space()='Add']")#clicked on add button
-    print("clicked on add button")
-    time.sleep(3)
-
-    #settings
-    driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Settings']").click()  # clicked on settings
-    print("clicked on settings")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//a[normalize-space()='Organization']").click()  # clicked on organization
-    print("clicked on organization")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//button[@class='flex gap-2 border-b border-transparent p-4 hover:border-primary "
-                                  "hover:text-primary !border-primary text-primary']").click()  # clicked on main
-    print("clicked on main")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//button[normalize-space()='Sub Organizations']").click()  # clicked on suborganization
-    print("clicked on sub organization")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//img[@alt='userProfile']").click()  # click on user profile
-    print("clicked on user profile to logout")
-    time.sleep(3)
-    driver.find_element(By.XPATH,
-                        "//div[@class='ml-4 flex cursor-pointer flex-row !py-3 text-danger']").click()  # clicked on logout
-    print("clicked on logout button")
-    time.sleep(3)
 
 # Close the browser
 time.sleep(5)
