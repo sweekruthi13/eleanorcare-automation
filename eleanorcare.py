@@ -5,117 +5,56 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import random
 
-import random # to generate random values, which help in creating dynamic and unique test data in Selenium automation.
+# Function to generate a unique 10-digit Indian phone number
+def generate_unique_phone():
+    first_digit = random.choice(['9', '8', '7'])
+    other_digits = ''.join(str(random.randint(0, 9)) for _ in range(9))
+    return first_digit + other_digits
 
-def locate_by_id_demo(): # Define the function
-                            # # Call the function at the end of the code
-
+def locate_by_id_demo():
+    # Initialize the Chrome driver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-#Navigate to the homepage
-    #driver.get("https://www.eleanorcare.ai/")
-    driver.get("http://localhost:3000/")
+    # Navigate to the homepage
+    driver.get("http://localhost:3000")
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
-    time.sleep(10)
-
-# #click on the home button
-#     driver.find_element(By.XPATH,"//div[normalize-space()='Home']").click() # click on home button
-#     time.sleep(5)
-#     print("clicked on the home button")
-#
-# #click on the features button in features click on several options to navigate to particular session
-#     driver.find_element(By.XPATH,"//a[@class='menu-link']//div[contains(text(),'Features')]").click()
-#                                                 #clicked on features
-#     time.sleep(5)
-#     print("clicked on features")
-#
-#     driver.find_element(By.XPATH,"//body/div[@id='wrapper']/header[@id='header']/div[@id='header-wrap']/div[@class='container']"
-#                                  "/div[@class='header-row']/nav[@class='primary-menu with-arrows primary-menu-init']/ul[@class='menu-container']"
-#                                  "/li[@class='menu-item mega-menu sub-menu menu-item-hover']/div[@class='mega-menu-content"
-#                                  " mega-menu-style-2 px-0']/div[@class='container']/div[@class='row']/a[1]/div[1]").click()
-#                                     #navigate to particular session called features
-#     time.sleep(10)
-#     print("clicked on features donation management")
-#
-#     driver.find_element(By.XPATH,"//a[@class='menu-link']//div[contains(text(),'Features')]").click()
-#                                                 #clicked on features
-#     time.sleep(5)
-#     print("clicked on features")
-#
-# #click on the contact button
-#     driver.find_element(By.XPATH,"//div[normalize-space()='Contact']").click()
-#     time.sleep(10)
-#     print("click on the contact button")
-#
-# #Home page to ask for the demo
-#     driver.find_element(By.XPATH,"//div[normalize-space()='Home']").click()
-#     time.sleep(5)
-#     print("click on home page to click on as for demo")
-#
-#     driver.find_element(By.XPATH,"//input[@id='contact form-name']").send_keys("Testing")
-#     time.sleep(5)
-#     print("entered name for demo session")
-#
-#     driver.find_element(By.XPATH,"//input[@id='contact form-email']").send_keys("testing@gmail.com")
-#     time.sleep(5)
-#     print("entered email for the demo session")
-#
-#     driver.find_element(By.XPATH,"//input[@id='contact form-phone']").send_keys("1234561232")
-#     time.sleep(5)
-#     print("entered phone number")
-#
-# #click on the Ask for the demo
-#     driver.find_element(By.XPATH,"//button[@id='demo-button']").click()
-#     time.sleep(10)
-#     print("clicked on i want a demo")
-#
-# #Click on the Login page
-#     driver.find_element(By.XPATH, "//a[normalize-space()='Login']").click()
-#     time.sleep(3)
-
-#Enter email
-    driver.find_element(By.ID, "email").send_keys("maintesting@gmail.com")
     time.sleep(3)
 
-#Enter password
+    # Login
+    driver.find_element(By.ID, "email").send_keys("sweekruthi@eleanortechnologies.com")
+    time.sleep(1)
     driver.find_element(By.ID, "password").send_keys("main@123")
-    time.sleep(3)
-
-#Show password (optional)
-    driver.find_element(By.XPATH, "//input[@type='checkbox']").click()
-    time.sleep(3)
-
-#Click the Sign-In button
+    time.sleep(1)
     driver.find_element(By.XPATH, "//button[normalize-space()='SIGN IN']").click()
     print("Clicked on the Sign In button successfully")
     time.sleep(3)
 
-#Enter OTP
-    driver.find_element(By.CSS_SELECTOR, 'input[type="text"]').send_keys()
-    print("entered otp")
-    time.sleep(10) 
-
-#click on check
-    driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
-    print("clicked on check button")
+    # Enter OTP manually
+    driver.find_element(By.CSS_SELECTOR, 'input[type="text"]').send_keys("")
+    print("Waiting for OTP input...")
     time.sleep(10)
 
+    # Click on CHECK
+    driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
+    print("Clicked on check button")
+    time.sleep(10)
 #Click on the dashboard button ( we need to copy real xpath and paste not index xpath)
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Dashboard']").click() 
     print("clicked on dashboard")
-    time.sleep(3)
+    time.sleep(10)
 
 #Click on donation button
     driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
     print("Clicked on donation button")
-    time.sleep(3)
+    time.sleep(5)
 
 #click on the Alldonations
     driver.find_element(By.XPATH,"//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
-    time.sleep(3)
+    time.sleep(5)
 
 
 
@@ -142,7 +81,7 @@ def locate_by_id_demo(): # Define the function
     time.sleep(2)
     print("clicked on agent name")
     driver.find_element(By.XPATH,"//textarea[@id='address']").send_keys("Banglore")
-    time.sleep(2)
+    time.sleep(5)
     print("entered address")
     driver.find_element(By.ID,"select-campaign-dropdown").click()
     print("clicked on select campaign dropdown")
@@ -150,13 +89,13 @@ def locate_by_id_demo(): # Define the function
     driver.find_element(By.ID,"select-target-account").click()
     print("clicked on target account")
     time.sleep(5)
-    driver.find_element(By.ID,"cash-donation-button").click()
+    driver.find_element(By.ID,"click-cash-donation").click()
     print("clicked on cash")
     time.sleep(2)
-    driver.find_element(By.ID,"online-donation-button").click()
+    driver.find_element(By.ID,"click-online-donation").click()
     print("clicked on online")
     time.sleep(2)
-    driver.find_element(By.ID,"cheque-donation-button").click()
+    driver.find_element(By.ID,"click-cheque-donation").click()
     print("clicked on cheque")
     time.sleep(2)
 
@@ -198,6 +137,109 @@ def locate_by_id_demo(): # Define the function
 
     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
+    time.sleep(10)
+
+#Donations
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Donations']").click()
+    print("Clicked on donation button")
+    time.sleep(5)
+#accounts
+    driver.find_element(By.XPATH,"//a[normalize-space()='Accounts']").click()#clicked on accounts
+    print("clicked on accounts")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH,"//button[normalize-space()='Add Account']").click()#click on Add accounts
+    print("clicked on add accounts")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH,"//input[@id='name']").send_keys("test") #entered name
+    print("Entered name")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH,"//input[@id='accNumber']").send_keys("1234567891")#entered account number
+    print("entered account number")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH,"//input[@id='accType']").send_keys("Current")#entered account type
+    print("entered account type")
+    time.sleep(10)
+
+    driver.find_element(By.ID, "select-tags-dropdown").click()
+    print("clicked on select tag dropdown")
+    time.sleep(5)
+
+    driver.find_element(By.XPATH, "//button[normalize-space()='Add']").click()  # clicked on add
+    print("click on add button")
+
+    time.sleep(5)
+
+    #driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Donations']").click()
+    #print("Clicked on donation button")
+    #time.sleep(5)
+
+   # driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
+    #print("clicked on all donations")
+    #time.sleep(10)
+
+    # Click on Donations -> All Donors -> Add Donor
+    driver.find_element(By.XPATH, "//span[@class='px-1'][normalize-space()='Donations']").click()
+    print("Clicked on Donations")
+    time.sleep(3)
+
+    driver.find_element(By.XPATH, "//a[normalize-space()='All Donors']").click()
+    print("Clicked on All Donors")
+    time.sleep(3)
+
+    driver.find_element(By.XPATH, "//button[normalize-space()='Add Donor']").click()
+    print("Clicked on Add Donor")
+    time.sleep(2)
+
+    # Fill the donor form
+    driver.find_element(By.XPATH, "//input[@id='name']").send_keys("Test")
+    print("Entered the donor name")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='email']").send_keys("test@gmail.com")
+    print("Entered email")
+    time.sleep(1)
+
+    #  Use generated unique phone number
+    unique_phone = generate_unique_phone()
+    driver.find_element(By.XPATH, "//input[@id='phone']").send_keys(unique_phone)
+    print("Entered phone number:", unique_phone)
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='pan']").send_keys("QWERT1231R")
+    print("Entered PAN number")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='addressLine1']").send_keys("Bangalore")
+    print("Entered address line 1")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='addressLine2']").send_keys("Mysore")
+    print("Entered address line 2")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='state']").send_keys("Karnataka")
+    print("Entered state")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//input[@id='country']").send_keys("India")
+    print("Entered country")
+    time.sleep(1)
+
+    driver.find_element(By.XPATH, "//button[normalize-space()='Add']").click()
+    print("Clicked on Add Donor")
+    time.sleep(5)
+
+#go back to donations  to select the date
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Donations']").click()
+    print("clicked on donation")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH,"//a[normalize-space()='All Donations']").click()
+    print("clicked on all donation")
     time.sleep(10)
 
 #  click on calendar drop down to select date
@@ -292,7 +334,7 @@ def locate_by_id_demo(): # Define the function
 
 
 #Sub organization drop down button for sorting date and check with cash,online,cheque,confirmed and unconfirmed
-    driver.find_element(By.ID,"sub-org-dropdown").click()   #click on the dropdown #click on the suborg dropdown
+    driver.find_element(By.ID,"sub-org-dropdown").click()   #click on the dropdown #click on the sing sing suborg dropdown
     time.sleep(10)
     print("clicked on the sub organization drop down")
     driver.find_element(By.XPATH,"//button[@class='relative group block bg-primary "
@@ -392,6 +434,7 @@ def locate_by_id_demo(): # Define the function
     driver.find_element(By.ID, "online-header").click()
     print("clicked on online")
     time.sleep(5)
+
     driver.find_element(By.XPATH, "//a[normalize-space()='Click here']").click()  # download sample csv for online
     time.sleep(3)
     print("Download sample CSV for online")
@@ -443,7 +486,7 @@ def locate_by_id_demo(): # Define the function
     time.sleep(3)
 
     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
-    print("clicked on all donations")
+    print("clicked on all donations")                   
     time.sleep(10)
 
 #To download duplicate entries, you need to select a two-month range from
@@ -458,12 +501,40 @@ def locate_by_id_demo(): # Define the function
     time.sleep(5)
     print("clicked on from date")
 
+
     driver.find_element(By.ID, "donations-more-action").click()
     time.sleep(4)
     print("clicked on the more action")
-    # driver.find_element(By.ID,"download-duplicate-button").click() #download the duplicate file for                                                                                                # 2 months in the form of Excel
-    # time.sleep(5)
-    # print("clicked on download duplicate button")
+    driver.find_element(By.ID,"download-duplicate-button").click() #download the duplicate file for                                                                                                # 2 months in the form of Excel
+    time.sleep(5)
+    print("clicked on download duplicate button")
+
+#to download 10BD
+
+    driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Donations']").click()
+    print("Clicked on donation button")
+    time.sleep(3)
+
+    driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
+    print("clicked on all donations")
+    time.sleep(10)
+
+    driver.find_element(By.XPATH, "//input[@id='toDateFilter']").click()  # click on to date
+    time.sleep(5)
+    print("clicked on to date")
+    driver.find_element(By.XPATH, "//input[@id='fromDateFilter']").click()  # click on from date
+    time.sleep(5)
+    print("clicked on from date")
+
+    driver.find_element(By.ID, "donations-more-action").click()
+    time.sleep(5)
+    print("clicked on the more action")
+
+    driver.find_element(By.ID,"//li[normalize-space()='Download 10BD']").click()
+    time.sleep(5)
+    print("clicked on 10BD")
+
+
 
 #GPT search button
 # GPT search button
@@ -543,13 +614,13 @@ def locate_by_id_demo(): # Define the function
     driver.find_element(By.XPATH, "//button[normalize-space()='Add Campaign']").click()  # click on add campaign
     print("clicked on add campaign")
     time.sleep(10)
-    # driver.find_element(By.ID,"header-edit").click()#clicked on edit button for header
+    # driver.find_element(By.ID,"edit-campaign-header").click()#clicked on edit button for header
     # print("clicked on edit button for the header")
     # time.sleep(10)
-    # driver.find_element(By.ID,"enter-text").click()#clicked on enter text
-    # print("entered the text")
+    # driver.find_element(By.ID,"edit-campaign-description").click()#clicked on enter text
+    # print("entered the edit-campaign-description")
     # time.sleep(10)
-    # driver.find_element(By.ID, "edit-text-close").click()
+    # driver.find_element(By.ID, "edit-close-text").click()
     # print("click on x button")
     # time.sleep(10)
     # #driver.find_element(By.XPATH,"//button[@class='absolute top-4 text-gray-400 outline-none hover:text-gray-800 "
@@ -618,6 +689,10 @@ def locate_by_id_demo(): # Define the function
     driver.find_element(By.ID, "campaign-save").click()
     print("clicked on save button")
     time.sleep(10)
+    #final step when we create campaign at last we will save it
+    #driver.find_element(By.ID,"//button[normalize-space()='Cancel']").click()
+    #print("clicked on cancel button")
+    #time.sleep(5)
 
 #EMPLOYEE
 #click on employees
@@ -632,11 +707,11 @@ def locate_by_id_demo(): # Define the function
 #click on add employees
     driver.find_element(By.XPATH,"//button[normalize-space()='Add Employee']").click()#clicked on add employees
     print("clicked on add employees")
-    time.sleep(5)
+    time.sleep(5)       
 
 
     # Generate a random email to avoid duplication
-    random_email = f"zibra{random.randint(1000, 9999)}@gmail.com"  #random.randint(1000, 9999)
+    random_email = f"zibra{random.randint(10000, 99999)}@gmail.com"  #random.randint(1000, 9999)
                                                                         #This generates a random 4-digit number between 1000 and 9999.
                                                                         # Example outputs: 4321, 7890, 1234, etc.
                                                                         #This is an f-string (formatted string) in Python.
@@ -779,7 +854,7 @@ def locate_by_id_demo(): # Define the function
     dropdown.click()
     print("Clicked on Manager dropdown")
     time.sleep(3)
-
+    
     # Wait for the dropdown options to be visible
    # options_list = WebDriverWait(driver, 10).until(
         #EC.presence_of_element_located((By.CLASS_NAME, "select-manager__menu"))
@@ -867,7 +942,7 @@ def locate_by_id_demo(): # Define the function
     driver.find_element(By.XPATH,"//input[@id='lineItemName']").send_keys("Pencil")#entered item name
     print("entered lineitemname")
     time.sleep(5)
-    driver.find_element(By.XPATH,"//textarea[@id='lineItemDescription']").send_keys("purchased the pencil")#entered lineitem description
+    driver.find_element(By.XPATH,"//textarea[@id='lineItemDescription']").send_keys("purchased the pencil")#entered line item description
     print("entered description")
     time.sleep(5)
     driver.find_element(By.XPATH,"//input[@id='lineItemAmount']").send_keys("1000")#entered line item amount
