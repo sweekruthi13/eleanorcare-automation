@@ -577,7 +577,7 @@ def locate_by_id_demo():
     time.sleep(10)
 
 #Add a new task
-    driver.find_element(By.ID,"add-task-button").click() #click on the add new task button
+    driver.find_element(By.ID,"add-task").click() #click on the add new task button
     print("clicked on add new task button")
     time.sleep(10)
     driver.find_element(By.XPATH,"//input[@id='name']").send_keys("Auto test adding task") #enter task title
@@ -595,7 +595,7 @@ def locate_by_id_demo():
     time.sleep(3)
 
 
-    driver.find_element(By.ID, "task-add").click()  #click on add button#click on add button
+    driver.find_element(By.ID, "add-task").click()  #click on add button#click on add button
     print("Click on add button")
     time.sleep(3)
 
