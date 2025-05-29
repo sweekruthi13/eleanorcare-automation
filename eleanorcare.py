@@ -736,7 +736,7 @@ def locate_by_id_demo():
     print("entered password")
     time.sleep(3)
 
-    driver.find_element(By.ID, "select-employee roles").click()
+    driver.find_element(By.ID, "select-employee-roles").click()
     print("clicked on select roles")
     time.sleep(5)
 
@@ -999,7 +999,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Sub Organizations']").click()#clicked on suborganization
     print("clicked on sub organization")
     time.sleep(3)
-    driver.find_element(By.ID,"setting-preferences").click()
+    driver.find_element(By.ID,"preferences-setting").click()
     print("clicked on preferences")
     time.sleep(10)
     driver.find_element(By.ID,"setting-razorpay-account").click()
