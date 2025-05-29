@@ -11,8 +11,8 @@ def locate_by_id_demo():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
 #Navigate to the homepage
-    #driver.get("https://www.eleanorcare.ai/")
-    driver.get("http://localhost:3000/")
+    driver.get("https://www.eleanorcare.ai/")
+
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
     time.sleep(3)

@@ -16,7 +16,8 @@ def locate_by_id_demo():
 
 #Navigate to the homepage
     # driver.get("https://www.eleanorcare.ai/")
-    driver.get("http://localhost:3000/")
+    #driver.get("http://localhost:3000/")
+    driver.get("https://internal.eleanorcare.ai/")
     print("Navigated to the EleanorCare homepage")
     driver.maximize_window()
     time.sleep(3)
@@ -25,7 +26,7 @@ def locate_by_id_demo():
     # time.sleep(3)
 
 #Enter email
-    driver.find_element(By.ID, "email").send_keys("maintesting@gmail.com")
+    driver.find_element(By.ID, "email").send_keys("sweekruthi@eleanortechnologies.com")
     time.sleep(3)
 
 #Enter password
@@ -113,6 +114,8 @@ def locate_by_id_demo():
     time.sleep(5)
     print("click on add button")
 
+
+
 # after donor details is entered and click on add we go to all donations and add donations
 # to check weather the donation has added or not
     driver.back()
@@ -127,6 +130,9 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH, "//a[normalize-space()='All Donations']").click()
     print("clicked on all donations")
     time.sleep(10)
+
+
+
 
 #  click on calendar drop down to select date
     driver.find_element(By.XPATH,"//button[@class='relative group block bg-primary p-1 rounded']//*[name()='svg']").click() #click on calender drop down

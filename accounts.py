@@ -41,7 +41,7 @@ def locate_by_id_demo():
 #click on check
     driver.find_element(By.XPATH, "//button[normalize-space()='CHECK']").click()
     print("clicked on check button")
-    time.sleep(7)
+    time.sleep(10)
 
 #click on accounts button
     driver.find_element(By.XPATH,"//span[@class='px-1'][normalize-space()='Donations']").click()#clicked on donations
@@ -63,7 +63,7 @@ def locate_by_id_demo():
     print("entered acc type")
     time.sleep(3)
     driver.find_element(By.ID,"select-tags-dropdown").click()
-    print("clicked on select tag")
+    print("clicked on select tag dropdown")
     time.sleep(5)
     driver.find_element(By.XPATH,"//button[normalize-space()='Add']").click()#clicked on add
     print("click on add button")

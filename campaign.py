@@ -53,7 +53,7 @@ def locate_by_id_demo():
     driver.find_element(By.XPATH,"//button[normalize-space()='Add Campaign']").click()#click on add campaign
     print("clicked on add campaign")
     time.sleep(10)
-    # driver.find_element(By.ID,"header-edit").click()#clicked on edit button for header
+    # driver.find_element(By.ID,"edit-campaign-header").click()#clicked on edit button for header
     # print("clicked on edit button for the header")
     # time.sleep(10)
     # driver.find_element(By.ID,"enter-text").click()#clicked on enter text
